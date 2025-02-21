@@ -27,7 +27,7 @@ col1, col2 = st.columns(2)
 with col1:
     st.subheader("Height 📏")
     height_unit = st.selectbox("Select height unit:", ["Meters", "Centimeters", "Inches", "Feet"])
-    height_input = st.number_input("Enter your height:", min_value=00, format="%.2f")
+    height_input = st.number_input("Enter your height:", min_value=0.0, format="%.2f")
 
     # Convert height based on selected unit
     if height_unit == "Centimeters":
@@ -46,7 +46,7 @@ with col1:
 with col2:
     st.subheader("Weight ⚖️")
     weight_unit = st.selectbox("Select weight unit:", ["Kilograms", "Pounds"])
-    weight_input = st.number_input("Enter your weight:", min_value=00, format="%.2f")
+    weight_input = st.number_input("Enter your weight:", min_value=0.0, format="%.2f")
 
     # Convert weight based on selected unit
     if weight_unit == "Pounds":
@@ -60,7 +60,7 @@ with col2:
 # --- BMI Calculation ---
 if height_slider > 0 and weight_slider > 0:  # Ensure valid input
     bmi = weight_slider / (height_slider ** 2)
-    st.write(f"### Your BMI is: **{bmi:.2f}**")
+    st.write(f"### Your BMI is **{bmi:.2f}** 📊")
 
     # Categorizing BMI with Emojis
     if bmi < 18.5:
@@ -74,40 +74,3 @@ if height_slider > 0 and weight_slider > 0:  # Ensure valid input
 else:
     st.warning("Please enter valid height and weight values. ⚠️")
 
-# #
-
-# import streamlit as st
-# import pandas as pd 
-
-# st.title("BMI Calculator")
-
-# # Define BMI categories as a DataFrame
-# bmi_categories = pd.DataFrame({
-#     "Category": ["Underweight", "Normal weight", "Overweight", "Obesity"],
-#     "BMI Range": ["Less than 18.5", "18.5 - 24.9", "25 - 29.9", "30 or greater"]
-# })
-
-# # Add a new index starting from 1
-# bmi_categories.index = bmi_categories.index + 1
-
-# # Display as a table
-# st.table(bmi_categories)
-
-# height = st.slider("Enter your height (in inches):",12,100,65)
-# weight = st.slider("Enter your weight (in kg):",30,200,50)
-
-# bmi = weight / (( height * 0.0254 ) ** 2) 
-
-# st.write(f"### Your BMI is {bmi:.2f}")
-
-    
-# if bmi < 18.5:
-#     st.info("You are underweight.")
-# elif 18.5 <= bmi < 24.9:  # Fixed the syntax here
-#     st.success("You have a normal weight.")
-# elif 25 <= bmi < 29.9:  # Fixed the syntax here
-#     st.success("You are overweight.")
-# else:
-#     st.error("You are obese.")
-
-# #
