@@ -27,7 +27,7 @@ col1, col2 = st.columns(2)
 with col1:
     st.subheader("Height 📏")
     height_unit = st.selectbox("Select height unit:", ["Meters", "Centimeters", "Inches", "Feet"])
-    height_input = st.number_input("Enter your height:", min_value=00, format="%.0f")
+    height_input = st.number_input("Enter your height:", min_value=00, format="%.2f")
 
     # Convert height based on selected unit
     if height_unit == "Centimeters":
@@ -46,7 +46,7 @@ with col1:
 with col2:
     st.subheader("Weight ⚖️")
     weight_unit = st.selectbox("Select weight unit:", ["Kilograms", "Pounds"])
-    weight_input = st.number_input("Enter your weight:", min_value=00, format="%.0f")
+    weight_input = st.number_input("Enter your weight:", min_value=00, format="%.2f")
 
     # Convert weight based on selected unit
     if weight_unit == "Pounds":
@@ -60,7 +60,7 @@ with col2:
 # --- BMI Calculation ---
 if height_slider > 0 and weight_slider > 0:  # Ensure valid input
     bmi = weight_slider / (height_slider ** 2)
-    st.write(f"Your BMI is: **{bmi:.2f}**")
+    st.write(f"### Your BMI is: **{bmi:.2f}**")
 
     # Categorizing BMI with Emojis
     if bmi < 18.5:
