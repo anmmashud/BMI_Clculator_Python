@@ -3,15 +3,10 @@ import pandas as pd
 import streamlit as st
 
 # Center-aligned Title and Description using HTML
-st.markdown("<h1 style='text-align: center;'>BMI Calculator 🏋️‍♂️</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>BMI Calculator</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>Calculate your Body Mass Index (BMI) to check if you're underweight, normal, overweight, or obese. "
             "Use the unit converter or slider to input your height and weight. Maintain a healthy balance! 💪</p>", unsafe_allow_html=True)
 
-
-# Title & Description
-st.title("BMI Calculator 🏋️‍♂️")
-st.write("Calculate your Body Mass Index (BMI) to check if you're underweight, normal, overweight, or obese. "
-         "Use the unit converter or slider to input your height and weight. Maintain a healthy balance! 💪")
 
 # --- Input Section ---
 
