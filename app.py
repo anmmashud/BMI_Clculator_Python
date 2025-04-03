@@ -6,18 +6,6 @@ st.title("BMI Calculator 🏋️‍♂️")
 st.write("Calculate your Body Mass Index (BMI) to check if you're underweight, normal, overweight, or obese. "
          "Use the unit converter or slider to input your height and weight. Maintain a healthy balance! 💪")
 
-# Define BMI categories
-bmi_categories = pd.DataFrame({
-    "Category": ["Underweight", "Normal weight", "Overweight", "Obesity"],
-    "BMI Range": ["Less than 18.5", "18.5 - 24.9", "25 - 29.9", "30 or greater"]
-})
-
-# Add index starting from 1
-bmi_categories.index = bmi_categories.index + 1
-
-# Display BMI category table
-st.table(bmi_categories)
-
 # --- Input Section ---
 
 # Create two columns for better layout
@@ -73,4 +61,18 @@ if height_slider > 0 and weight_slider > 0:  # Ensure valid input
         st.error("🚨 **Obesity** – Maintaining a healthier lifestyle is recommended. 🏋️‍♂️")
 else:
     st.warning("Please enter valid height and weight values. ⚠️")
+
+
+# Define BMI categories
+bmi_categories = pd.DataFrame({
+    "Category": ["Underweight", "Normal weight", "Overweight", "Obesity"],
+    "BMI Range": ["Less than 18.5", "18.5 - 24.9", "25 - 29.9", "30 or greater"]
+})
+
+# Add index starting from 1
+bmi_categories.index = bmi_categories.index + 1
+
+# Display BMI category table
+st.table(bmi_categories)
+
 
